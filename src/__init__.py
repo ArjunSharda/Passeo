@@ -4,7 +4,7 @@ import hashlib
 import requests
 
 
-class Passeo:
+class passeo:
     def __init__(self):
 
         def generate(length, numbers=False, symbols=False, uppercase=False, lowercase=False, space=False, save=False):
