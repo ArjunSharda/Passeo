@@ -22,9 +22,8 @@ from passeo import passeo
 print(passeo().generate(10, numbers=True, symbols=True, save=True))
 ```
 
-# v1.0.3 changes
-- [FIX] Fixed a bug with using Passeo
-
+# v1.0.4 changes
+- [ADDED] Added case check to the strength check for Passeo, checking for uppercase/lowercase, and did some other minor improvements. See the Pull Request [here](https://github.com/ArjunSharda/Passeo/pull/1/files).
 
 
 <hr>
