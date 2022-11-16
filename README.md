@@ -7,10 +7,13 @@
 
 Passeo is a python password generator developed by [Arjun Sharda](https://github.com/ArjunSharda), under the [MIT License](https://github.com/ArjunSharda/Passeo/blob/main/LICENSE).
 
+<br>
+Passeo is used for checking your password through our strength check (includes Pwned, Length, and Case) and generate a password with multiple options.
+</br>
 
 # Why use Passeo?
 
-Passeo is a upcoming password generator project, with massive plans in the future, such as generation of a password and strength checker via terminal. Passeo is also completely safe to use and is open source for the community to know that and learn from how the password generator.
+Passeo is a upcoming password generator project, with massive plans in the future, such as generation of a password and strength checker via CLI/terminal. Passeo is also completely safe to use and is open source for the community to know how the codebase works and learn from how the password generator.
 
 
 -----------------
