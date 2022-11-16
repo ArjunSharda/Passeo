@@ -23,7 +23,7 @@ print(passeo().generate(10, numbers=True, symbols=True, save=True))
 ```
 
 # v1.0.4 changes
-- [ADDED] Added case check to the strength check for Passeo, checking for uppercase/lowercase, and did some other minor improvements. See the Pull Request [here](https://github.com/ArjunSharda/Passeo/pull/1/files).
+- [ADDED] Added case check to the strength check to Passeo, checking for uppercase/lowercase, and did some other minor improvements. See the Pull Request [here](https://github.com/ArjunSharda/Passeo/pull/1/files).
 
 
 <hr>
