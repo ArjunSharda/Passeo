@@ -9,20 +9,24 @@ class passeo:
 
         def generate(length, numbers=False, symbols=False, uppercase=False, lowercase=False, space=False, save=False):
             password = ''
-            if numbers:
+            if numbers is True:
                 password += string.digits
-            if symbols:
+            if symbols is True:
                 password += string.punctuation
-            if uppercase:
+
+            if uppercase is True:
                 password += string.ascii_uppercase
-            if lowercase:
-                if uppercase:
-                    raise ValueError('Uppercase and lowercase are both true, please make one of them false.')
+
+            if lowercase is True:
                 password += string.ascii_lowercase
-            if space:
+
+            if lowercase is True and uppercase is True:
+                raise ValueError('Uppercase and lowercase are both true, please make one of them false.')
+
+            if space is True:
                 password += ' '
             PasseoPassword = ''.join(random.sample(password, length))
-            if save:
+            if save is True:
                 with open('passeo_passwords.txt', 'a') as file:
                     file.write(PasseoPassword + '\n')
             return PasseoPassword
@@ -54,7 +58,7 @@ class passeo:
 
             elif length > 16:
                 StrengthCheckQuiz['Length'] = '2/3: PASS: Your password is very long, good job!'
-            
+
             elif length == None:
                 StrengthCheckQuiz['Length'] = '2/3: FAIL: An error has occurred, please try again.'
 
@@ -65,9 +69,25 @@ class passeo:
                 StrengthCheckQuiz['Case'] = '3/3: FAIL: Your password has uppercase letters, however it is also recommended to add lowercase letters.'
             elif password.lower() and password.upper():
                 StrengthCheckQuiz['Case'] = '3/3: PASS: Your password has both uppercase and lowercase letters, good job!'
-            
+
             elif password == None:
                 StrengthCheckQuiz['Case'] = '3/3: FAIL: An error has occurred, please try again.'
-            return str(StrengthCheckQuiz['Pwned']) + '\n' + str(StrengthCheckQuiz['Length'] + '\n' + str(StrengthCheckQuiz['Case']) + '\n' + 'The Passeo password strength test has ended. Any questions/bugs? Raise a issue on https://github.com/ArjunSharda/Passeo/issue.')
+            return str(StrengthCheckQuiz['Pwned']) + '\n' + str(StrengthCheckQuiz['Length'] + '\n' + str(
+                StrengthCheckQuiz['Case']) + '\n' + 'The Passeo password strength test has ended. Any questions/bugs? Raise a issue on https://github.com/ArjunSharda/Passeo/issue.')
 
         self.strengthcheck = strengthcheck
+        
+        def quickgenerate(length=int, save=False, bulk=1):
+            PASSEO_QUICKGEN_PASSWORD = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(length))
+            if save:
+                with open('passeo_quickgen_passwords.txt', 'a') as file:
+                    file.write(PASSEO_QUICKGEN_PASSWORD + '\n')
+                    if bulk > 1:
+                        with open('passeo_quickgen_bulk_passwords.txt', 'a') as bulkf:
+                            for i in range(bulk):
+                                bulkf.write(''.join(random.choice(string.ascii_letters + string.digits) for i in range(length)) + '\n')
+
+            return PASSEO_QUICKGEN_PASSWORD
+
+
+        self.quickgenerate = quickgenerate
