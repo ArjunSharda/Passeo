@@ -25,8 +25,9 @@ from passeo import passeo
 print(passeo().generate(10, numbers=True, symbols=True, save=True))
 ```
 
-# v1.0.4 changes
-- [ADDED] Added case check to the strength check to Passeo, checking for uppercase/lowercase, and did some other minor improvements. See the Pull Request [here](https://github.com/ArjunSharda/Passeo/pull/1/files).
+# v1.0.5 changes
+- [CRITICAL SECURITY PATCH] Fixed a critical security issue that is affecting currently everyone <1.0.5. It is highly recommended to update.
+- [ADDED] Added a new quickgenerate function which can allow people to in bulk generate passwords that have letters and numbers. This will get more update as Passeo is developed to strengthen security of Passeo's users.
 
 
 <hr>
