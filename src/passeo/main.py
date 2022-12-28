@@ -1,6 +1,7 @@
 import click
+import secrets
+import string
 from passeo import passeo
-
 
 @click.group()
 def cli():
@@ -22,48 +23,73 @@ def cli():
 @click.argument("lowercase", type=bool)
 @click.argument("space", type=bool)
 @click.argument("save", type=bool)
-def main(generate, length, numbers, symbols, uppercase, lowercase, space, save):
+def generate(generate, length, numbers, symbols, uppercase, lowercase, space, save):
     try:
+        password = ''
 
-        if numbers == "y" or numbers == "Y" or numbers == "yes" or numbers == "Yes" or numbers == "YES" or numbers == "true" or numbers == "True" or numbers == "TRUE":
-            numbers = True
+        if numbers is True:
+            password += secrets.choice(string.digits)
 
-        if symbols == "y" or symbols == "Y" or symbols == "yes" or symbols == "Yes" or symbols == "YES" or symbols == "true" or symbols == "True" or symbols == "TRUE":
-            symbols = True
-
-        if uppercase == "y" or uppercase == "Y" or uppercase == "yes" or uppercase == "Yes" or uppercase == "YES" or uppercase == "true" or uppercase == "True" or uppercase == "TRUE":
-            uppercase = True
-
-        if lowercase == "y" or lowercase == "Y" or lowercase == "yes" or lowercase == "Yes" or lowercase == "YES" or lowercase == "true" or lowercase == "True" or lowercase == "TRUE":
-            lowercase = True
-
-        if space == "y" or space == "Y" or space == "yes" or space == "Yes" or space == "YES" or space == "true" or space == "True" or space == "TRUE":
-            space = True
-        if save == "y" or save == "Y" or save == "yes" or save == "Yes" or save == "YES" or save == "true" or save == "True" or save == "TRUE":
-            save = True
-
-        elif numbers == "n" or numbers == "N" or numbers == "no" or numbers == "No" or numbers == "NO" or numbers == "false" or numbers == "False" or numbers == "FALSE":
-            numbers = False
-
-        elif symbols == "n" or symbols == "N" or symbols == "No" or symbols == "no" or symbols == "NO" or symbols == "false" or symbols == "False" or symbols == "FALSE":
-            symbols = False
-
-        elif uppercase == "n" or uppercase == "N" or uppercase == "No" or uppercase == "no" or uppercase == "NO" or uppercase == "false" or uppercase == "False" or uppercase == "FALSE":
-            uppercase = False
-
-        elif lowercase == "n" or lowercase == "N" or lowercase == "No" or lowercase == "no" or lowercase == "NO" or lowercase == "false" or lowercase == "False" or lowercase == "FALSE":
-            lowercase = False
-
-        elif space == "n" or space == "N" or space == "No" or space == "no" or space == "NO" or space == "false" or space == "False" or space == "FALSE":
-            space = False
-
-        elif save == "n" or save == "N" or save == "No" or save == "no" or save == "NO" or save == "false" or save == "False" or save == "FALSE":
-            save = False
+        if symbols is True:
+            password += secrets.choice(string.punctuation)
 
 
-    finally:
+        if uppercase is True:
+            password += secrets.choice(string.ascii_uppercase)
+
+        if lowercase is True:
+            password += secrets.choice(string.ascii_lowercase)
+
+        if space is True:
+            password += password.join (' ')
+
+        if save is True:
+            with open("passeo_passwords.txt", "a") as f:
+                f.write(password + "\n")
+
+        elif numbers is False:
+            pass
+
+        elif symbols is False:
+            pass
+
+        elif uppercase is False:
+            pass
+
+        elif lowercase is False:
+           pass
+
+        elif space is False:
+            pass
+
+        elif save is False:
+            pass
+
+
         if click.confirm("Do you want to generate a password? Details: \n Length: " + str(length) + "\n Numbers: " + str(numbers) +"\n Symbols: " + str(symbols) + "\n Uppercase: " + str(uppercase) + "\n Lowercase: " + str(lowercase) + "\n Space: " + str(space) + "\n Save: " + str(save)):
-            click.echo(passeo().generate(length, symbols, uppercase, lowercase, space, save))
+            FinalPassword = ''.join(secrets.choice(password) for i in range(length))
+            click.echo(FinalPassword)
+
+    except Exception:
+            click.echo(Exception)
+
+
+@cli.command()
+@click.option(
+    "-s",
+    "--strengthcheck",
+    is_flag=True,
+    help="Check the strength of a password.",
+)
+@click.argument("password", type=str)
+def strengthcheck(strengthcheck, password):
+    try:
+        if click.confirm("Do you want to check the strength of a password?"):
+            click.echo(passeo().strengthcheck(password))
+    except Exception:
+        click.echo(Exception)
+
+
 
 
 if __name__ == "__main__":
