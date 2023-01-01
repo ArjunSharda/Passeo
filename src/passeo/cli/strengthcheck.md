@@ -8,4 +8,4 @@ Usage example:
 $ passeo strengthcheck HelloWORLD
 ```
 
-`password`[str] - The password you are strength checking.
+`password`[str] - The password you are strength checking. (Required argument)
