@@ -1,7 +1,8 @@
 # Quick Generate
 
 Supported: ✅
-Usage:
+
+Usage example:
 
 ```bash
 $ passeo quickgenerate 10 n 0
