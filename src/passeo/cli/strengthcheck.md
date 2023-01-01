@@ -2,10 +2,10 @@
 
 Supported: ✅
 
-Usage:
+Usage example:
 
 ```bash
 $ passeo strengthcheck HelloWORLD
 ```
 
-`password` - The password you are strength checking.
+`password`[str] - The password you are strength checking.
