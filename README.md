@@ -25,12 +25,12 @@ from passeo import passeo
 print(passeo().generate(10, numbers=True, symbols=True, save=True))
 ```
 
-# v1.0.5 changes
-- [CRITICAL SECURITY PATCH] Fixed a critical security issue that is affecting currently everyone <1.0.5. It is highly recommended to update.
-- [ADDED] Added a new quickgenerate function which can allow people to in bulk generate passwords that have letters and numbers. This will get more update as Passeo is developed to strengthen security of Passeo's users.
+# v1.0.6 changes
+- [SUPPORT] Added support for command line interface (CLI). Feature request can be found [here](https://github.com/ArjunSharda/Passeo/issues/2), and the CLI commands will be documented in the [examples](https://github.com/ArjunSharda/Passeo/tree/main/examples) page soon.
+- [ADDED] New setup.py file to support the adjustments needed for CLI.
 
 
 <hr>
-<h6 align="center">© Arjun Sharda 2022 
+<h6 align="center">© Arjun Sharda 2022-present 
 <br>
 All Rights Reserved</h6>
