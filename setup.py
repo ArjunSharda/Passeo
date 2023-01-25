@@ -25,7 +25,7 @@ setup(
 
     python_requires=">=3.7, <4",
 
-    install_requires=["passeo", "click"],
+    install_requires=["passeo", "click", "hashlib", "string", "requests"],
    
     
    
