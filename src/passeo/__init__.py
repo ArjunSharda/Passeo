@@ -3,7 +3,6 @@ import hashlib
 import requests
 import secrets
 
-
 class passeo:
     def __init__(self):
 
@@ -85,17 +84,19 @@ class passeo:
 
         def quickgenerate(length=int, save=False, bulk=1):
             PASSEO_QUICKGEN_PASSWORD = ''.join(
-                secrets.choice(string.ascii_letters + string.digits) for i in range(length))
+                secrets.choice(string.ascii_letters + string.digits + string.ascii_uppercase + string.punctuation + string.hexdigits + string.octdigits + string.whitespace) for i in range(length))
             if save:
                 with open('passeo_quickgen_passwords.txt', 'a') as file:
                     file.write(PASSEO_QUICKGEN_PASSWORD + '\n')
                     if bulk > 1:
-                        with open('passeo_quickgen_bulk_passwords.txt', 'a') as bulkf:
+                        with open('passeo_quickgen_bulk_passwords.txt', 'a') as f:
                             for i in range(bulk):
-                                bulkf.write(''.join(
-                                    secrets.choice(string.ascii_letters + string.digits) for i in range(length)) + '\n')
+                                f.write(''.join(
+                                    passeo().generate(length, numbers=True, symbols=True, uppercase=False, lowercase=False) + secrets.choice(string.ascii_lowercase) + secrets.choice(string.ascii_uppercase) + '\n')),
 
             return PASSEO_QUICKGEN_PASSWORD
-
-
         self.quickgenerate = quickgenerate
+        
+
+
+

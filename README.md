@@ -25,9 +25,8 @@ from passeo import passeo
 print(passeo().generate(10, numbers=True, symbols=True, save=True))
 ```
 
-# v1.0.6 changes
-- [SUPPORT] Added support for command line interface (CLI). Feature request can be found [here](https://github.com/ArjunSharda/Passeo/issues/2), and the CLI commands will be documented in the [examples](https://github.com/ArjunSharda/Passeo/tree/main/examples) page soon.
-- [ADDED] New setup.py file to support the adjustments needed for CLI.
+# v1.0.7 changes
+- **[SECURITY]** Added more security to the quickgenerate CLI version and normal version to ensure Passeo is secure.
 
 
 <hr>
