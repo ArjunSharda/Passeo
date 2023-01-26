@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
- import pathlib
+import pathlib
 
  project_dir = pathlib.Path(__file__).parent.resolve()
  long_description = (project_dir / "README.md").read_text(encoding="utf-8")
