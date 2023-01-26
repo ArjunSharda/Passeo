@@ -25,7 +25,7 @@ from setuptools import setup, find_packages
 
      python_requires=">=3.7, <4",
 
-     install_requires=["click", "requests", "secrets"],
+     install_requires=["click", "requests"],
 
 
 
