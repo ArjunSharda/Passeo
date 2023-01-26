@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools", "click", "requests", "hashlib", "string"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "passeo"
-version = "1.0.7"
+version = "1.0.8"
 authors = [
     { name="Arjun Sharda", email="sharda.aj17@gmail.com" },
 ]
