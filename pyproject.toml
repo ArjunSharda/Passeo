@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "click", "requests", "hashlib"]
+requires = ["setuptools", "click", "requests", "secrets"]
 build-backend = "setuptools.build_meta"
 
 [project]
