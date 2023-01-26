@@ -21,7 +21,7 @@ Passeo is a upcoming password generator project, with massive plans in the futur
 # Quickstart
 
 ```python
-from import passeo
+from passeo import passeo
 print(passeo().generate(length=10, numbers=True, symbols=True, uppercase=True, lowercase=False, space=True, save=True))
 ```
 
