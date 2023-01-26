@@ -25,7 +25,7 @@ import passeo
 print(passeo().generate(length=10, numbers=True, symbols=True, uppercase=True, lowercase=False, space=True, save=True))
 ```
 
-# v1.0.7 changes
+# v1.0.8 changes
 - **[FIX]** Fixed installation problems of Passeo.
 
 <hr>
