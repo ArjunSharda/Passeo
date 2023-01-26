@@ -6,7 +6,7 @@ long_description = (project_dir / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="passeo",
-    version="1.0.7",
+    version="1.0.8",
     description="🔓 Generate a Password with multiple options",
     long_description=long_description,
     long_description_content_type="text/markdown",
