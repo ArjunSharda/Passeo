@@ -21,13 +21,12 @@ Passeo is a upcoming password generator project, with massive plans in the futur
 # Quickstart
 
 ```python
-import passes
-print(passeo().generate(length=10, numbers=True, symbols=True, uppercase=True, lowercase=false, space=True, save=True))
+import passeo
+print(passeo().generate(length=10, numbers=True, symbols=True, uppercase=True, lowercase=False, space=True, save=True))
 ```
 
 # v1.0.7 changes
-- **[SECURITY]** Added more security to the quickgenerate CLI version and normal version to ensure Passeo is secure.
-
+- **[FIX]** Fixed installation problems of Passeo.
 
 <hr>
 <h6 align="center">© Arjun Sharda 2022-present 
