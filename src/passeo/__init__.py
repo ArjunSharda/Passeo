@@ -91,8 +91,10 @@ class passeo:
                     if bulk > 1:
                         with open('passeo_quickgen_bulk_passwords.txt', 'a') as f:
                             for i in range(bulk):
+                                print("Your passwords have been generated in `passeo_quickgen_bulk_passwords.txt`!")
                                 f.write(''.join(
                                     passeo().generate(length, numbers=True, symbols=True, uppercase=False, lowercase=False) + secrets.choice(string.ascii_lowercase) + secrets.choice(string.ascii_uppercase) + '\n')),
+                                
 
             return PASSEO_QUICKGEN_PASSWORD
         self.quickgenerate = quickgenerate
