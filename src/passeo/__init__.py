@@ -27,6 +27,7 @@ class passeo:
             if save is True:
                 with open('passeo_passwords.txt', 'a') as file:
                     file.write(PasseoPassword + '\n')
+                    print("Your passwords have been generated in `passeo_passwords.txt`!")
             return PasseoPassword
 
 
