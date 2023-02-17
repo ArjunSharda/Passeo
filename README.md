@@ -25,8 +25,8 @@ from passeo import passeo
 print(passeo().generate(length=10, numbers=True, symbols=True, uppercase=True, lowercase=False, space=True, save=True))
 ```
 
-# v1.0.8 changes
-- **[FIX]** Fixed installation problems of Passeo.
+# v1.0.9 changes
+- **[FIX]** Told people when your passwords have been generated in a txt file.
 
 <hr>
 <h6 align="center">© Arjun Sharda 2022-present 
