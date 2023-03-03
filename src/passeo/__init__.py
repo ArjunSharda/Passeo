@@ -2,6 +2,7 @@ import string
 import hashlib
 import requests
 import secrets
+from cryptography.fernet import Fernet
 
 class passeo:
     def __init__(self):
@@ -27,7 +28,6 @@ class passeo:
             if save is True:
                 with open('passeo_passwords.txt', 'a') as file:
                     file.write(PasseoPassword + '\n')
-                    print("Sucessfully generated in passeo_passwords.txt file!")
             return PasseoPassword
 
 
@@ -89,17 +89,27 @@ class passeo:
             if save:
                 with open('passeo_quickgen_passwords.txt', 'a') as file:
                     file.write(PASSEO_QUICKGEN_PASSWORD + '\n')
-                    print("Sucessfully generated in passeo_quickgen_passwords.txt!")
                     if bulk > 1:
                         with open('passeo_quickgen_bulk_passwords.txt', 'a') as f:
-                            print("Sucessfully generated in passeo_quickgen_bulk_passwords.txt!")
                             for i in range(bulk):
                                 f.write(''.join(
                                     passeo().generate(length, numbers=True, symbols=True, uppercase=False, lowercase=False) + secrets.choice(string.ascii_lowercase) + secrets.choice(string.ascii_uppercase) + '\n')),
 
             return PASSEO_QUICKGEN_PASSWORD
         self.quickgenerate = quickgenerate
+
+
+        def encrypt(data):
+          key = Fernet.generate_key()
+          f = Fernet(key)
+          encrypted_data = f.encrypt(data.encode())
+          return encrypted_data, key
+        self.encrypt = encrypt
+
+        def decrypt(encrypted_data):
+          key = encrypted_data[1]
+          f = Fernet(key)
+          decrypted_data = f.decrypt(encrypted_data[0]).decode()
+          return decrypted_data
+        self.decrypt = decrypt  
         
-
-
-
