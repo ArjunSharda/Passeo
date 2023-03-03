@@ -26,7 +26,7 @@ print(passeo().generate(length=10, numbers=True, symbols=True, uppercase=True, l
 ```
 
 # v1.0.8 changes
-- **[FIX]** Fixed installation problems of Passeo.
+- **[ADDED]** Lets you know when a password has been generated in a file.
 
 <hr>
 <h6 align="center">© Arjun Sharda 2022-present 
