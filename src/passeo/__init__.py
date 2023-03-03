@@ -27,6 +27,7 @@ class passeo:
             if save is True:
                 with open('passeo_passwords.txt', 'a') as file:
                     file.write(PasseoPassword + '\n')
+                    print("Sucessfully generated in passeo_passwords.txt file!")
             return PasseoPassword
 
 
@@ -88,8 +89,10 @@ class passeo:
             if save:
                 with open('passeo_quickgen_passwords.txt', 'a') as file:
                     file.write(PASSEO_QUICKGEN_PASSWORD + '\n')
+                    print("Sucessfully generated in passeo_quickgen_passwords.txt!")
                     if bulk > 1:
                         with open('passeo_quickgen_bulk_passwords.txt', 'a') as f:
+                            print("Sucessfully generated in passeo_quickgen_bulk_passwords.txt!")
                             for i in range(bulk):
                                 f.write(''.join(
                                     passeo().generate(length, numbers=True, symbols=True, uppercase=False, lowercase=False) + secrets.choice(string.ascii_lowercase) + secrets.choice(string.ascii_uppercase) + '\n')),
