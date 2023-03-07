@@ -1,3 +1,3 @@
 from passeo import passeo
 
-print(passeo().strengthcheck("Passeo"))
+print(passeo.strengthcheck("Passeo"))
