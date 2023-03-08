@@ -30,9 +30,9 @@ print(passeo.generate(length=10, numbers=True, symbols=True, uppercase=True, low
 - **[BREAKING]** Changed Passeo to a Enum, meaning that it will now be for generation for example `passeo.generate`, not `passeo().generate`.
 - **[ADDED]** Added encoding and decoding. It has been supported by CLI.
 
-# v1.1.1 changes
+# v1.1.2 changes
 ----------------
-- **[FIXED]** Fixed CLI issues with encoding and decoding (is_flag issue)
+- **[FIXED]** Fixed CLI issues with encoding and decoding (wrong function used issue)
 
 
 
