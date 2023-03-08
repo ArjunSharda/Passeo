@@ -88,17 +88,17 @@ class passeo(Enum):
         return PASSEO_QUICKGEN_PASSWORD
 
 
-    def encrypt(data):
+    def encode(data):
         key = Fernet.generate_key()
         f = Fernet(key)
-        encrypted_data = f.encrypt(data.encode())
+        encrypted_data = f.encode(data.encode())
         return encrypted_data, key
 
 
 
 
 
-    def decrypt(encrypted_data):
+    def decode(encrypted_data):
         key = encrypted_data[1]
         f = Fernet(key)
         decrypted_data = f.decrypt(encrypted_data[0]).decode()
