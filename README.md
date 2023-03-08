@@ -27,9 +27,7 @@ print(passeo.generate(length=10, numbers=True, symbols=True, uppercase=True, low
 
 # v1.1.0 changes
 - **[BREAKING]** Changed Passeo to a Enum, meaning that it will now be for generation for example `passeo.generate`, not `passeo().generate`.
-- **[ADDED]** Added encryption, which is also supported by CLI.
-- **[ADDED]** Added decryption, which is also supported by CLI.
-
+- **[ADDED]** Added encryption and decryption. It has been supported by CLI.
 <hr>
 <h6 align="center">© Arjun Sharda 2022-present 
 <br>
