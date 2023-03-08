@@ -82,7 +82,7 @@ def quickgenerate(quickgenerate, length, save, bulk):
 @click.option(
     "-e",
     "--encode",
-    is_flag=True,
+    is_flag=False,
     help="Encode a string.",
 )
 
@@ -98,7 +98,7 @@ def encode(encode, data):
 @click.option(
     "-d",
     "--decode",
-    is_flag=True,
+    is_flag=False,
     help="Decode a string.",
 )
 @click.argument("encrypted_data", type=str)
