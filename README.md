@@ -22,11 +22,13 @@ Passeo is a upcoming password generator project, with massive plans in the futur
 
 ```python
 from passeo import passeo
-print(passeo().generate(length=10, numbers=True, symbols=True, uppercase=True, lowercase=False, space=True, save=True))
+print(passeo.generate(length=10, numbers=True, symbols=True, uppercase=True, lowercase=False, space=True, save=True))
 ```
 
-# v1.0.8 changes
-- **[ADDED]** Lets you know when a password has been generated in a file.
+# v1.1.0 changes
+- **[BREAKING]** Changed Passeo to a Enum, meaning that it will now be for generation for example `passeo.generate`, not `passeo().generate`.
+- **[ADDED]** Added encryption, which is also supported by CLI.
+- **[ADDED]** Added decryption, which is also supported by CLI.
 
 <hr>
 <h6 align="center">© Arjun Sharda 2022-present 
