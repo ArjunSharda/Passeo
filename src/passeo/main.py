@@ -81,15 +81,15 @@ def quickgenerate(quickgenerate, length, save, bulk):
 @cli.command()
 @click.option(
     "-e",
-    "--encode",
+    "--encrypt",
     is_flag=False,
-    help="Encode a string.",
+    help="Encrypt a string.",
 )
 
 @click.argument("data", type=str)
-def encode(encode, data):
+def encrypt(encrypt, data):
     try:
-        click.echo(passeo.encode(data))
+        click.echo(passeo.encrypt(data))
     except Exception:
         click.echo(Exception)
 
@@ -97,14 +97,14 @@ def encode(encode, data):
 @cli.command()
 @click.option(
     "-d",
-    "--decode",
+    "--decrypt",
     is_flag=False,
-    help="Decode a string.",
+    help="Decrypt a string.",
 )
 @click.argument("encrypted_data", type=str)
-def decode(decode, encrypted_data):
+def decrypt(decrypt, encrypted_data):
     try:
-        click.echo(passeo.decode(encrypted_data))
+        click.echo(passeo.decrypt(encrypted_data))
     except Exception:
         click.echo(Exception)
         
