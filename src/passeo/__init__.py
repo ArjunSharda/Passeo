@@ -1,6 +1,7 @@
 import hashlib
 import secrets
 import string
+import bcrypt
 
 import requests
 from aenum import Enum
@@ -68,7 +69,6 @@ class passeo(Enum):
         return str(StrengthCheckQuiz['Pwned']) + '\n' + str(StrengthCheckQuiz['Length']) + '\n' + str(
             StrengthCheckQuiz['Case'])
 
-
     def quickgenerate(length=int, save=False, bulk=1):
         PASSEO_QUICKGEN_PASSWORD = ''.join(
             secrets.choice(
@@ -87,18 +87,13 @@ class passeo(Enum):
 
         return PASSEO_QUICKGEN_PASSWORD
 
-
     def encrypt(data):
         key = Fernet.generate_key()
         f = Fernet(key)
         encrypted_data = f.encode(data.encrypt())
         return encrypted_data, key
 
-
-
-
-
-    def decode(encrypted_data):
+    def decrypt(encrypted_data):
         key = encrypted_data[1]
         f = Fernet(key)
         decrypted_data = f.decrypt(encrypted_data[0]).decrypt()
