@@ -1,7 +1,7 @@
 # Passeo
 <div style="text-align: center; display: grid; justify-content: center;"><img style="margin: auto; margin-bottom: 1rem; border-radius: 30%;" height="150" width="150" src="https://raw.githubusercontent.com/ArjunSharda/Passeo/main/ext/passeo.jpg"/></div>
 
-"🔓 Generate a Password with multiple options"
+> 🔓 Generate a password with multiple options
 
 # What is Passeo?
 
@@ -34,6 +34,20 @@ py -3 -m pip install -U passeo
 ```python
 >>> from passeo import passeo
 >>> print(passeo.generate(length=10, numbers=True, symbols=True, uppercase=True, lowercase=False, space=True, save=True))
+```
+
+Docker
+------
+
+Building the docker image
+```sh
+$ docker build -t passeo .
+```
+
+Running passeo on the docker container
+```sh
+$ docker run --rm -it passeo sh
+/usr/src/passeo/examples # python generate.py
 ```
 
 # v1.1.0 changes
